@@ -16,6 +16,10 @@ every 2–3 years (Penn State Extension offers low-cost soil testing).
 | Roma Tomatoes | Warm-season, transplant | Determinate — great for canning |
 | Strawberries | Perennial | Plant bare root in April; returns yearly |
 | Carrots | Cool-season, direct sow | Needs loose, deeply worked soil — amend well |
+| Cosmos | Warm-season, direct sow | Sow after May 15; self-seeds — comes back each year |
+| Scarlet Flax | Cool-season, direct sow | Direct sow early April; loves cold, dislikes transplanting |
+| Iris | Perennial (rhizome) | Plant rhizomes July–September; blooms May–June |
+| Sunflowers | Warm-season, direct sow | Direct sow May 15+; plant in succession every 2 weeks for longer bloom |
 | **Cucumbers** *(suggested)* | Warm-season, direct sow | Easy, prolific, thrives in PA summers |
 | **Zucchini** *(suggested)* | Warm-season, direct sow | High yield, low effort — 2 plants = plenty |
 | **Bush Beans** *(suggested)* | Warm-season, direct sow | No trellising, succession-plant every 3 weeks |
@@ -64,6 +68,9 @@ every 2–3 years (Penn State Extension offers low-cost soil testing).
 - [ ] **Direct sow lettuce and spinach** in a separate bed or container (soil temp 40°F+)
 - [ ] Thin pepper and tomato seedlings if multiple sprouted per cell — keep the strongest one
 - [ ] Fertilize indoor seedlings with diluted liquid fertilizer (half-strength balanced 10-10-10)
+- [ ] **Direct sow Scarlet Flax** outdoors — it tolerates frost and prefers cool soil (sow March 29–April 10)
+  - Scatter seeds thinly on prepared soil, press in lightly — needs light to germinate, do not cover deeply
+  - Blooms in about 6–8 weeks; will self-sow if you let some go to seed
 - [ ] **Check Back Mountain weather forecasts** — late March cold snaps can still hit hard
 
 ---
@@ -81,6 +88,7 @@ every 2–3 years (Penn State Extension offers low-cost soil testing).
   - Space 12–18 inches apart in rows 24 inches wide
   - Water in well; mulch lightly with straw
 - [ ] Snap peas should be sprouting — check germination; resow any bare patches
+- [ ] **Purchase iris rhizomes** if you don't already have them — note: irises planted this year will bloom next May/June; existing established irises will bloom this spring
 - [ ] Harden off lettuce/spinach seedlings if started indoors by setting outside in a sheltered spot
 
 #### Week 5 — April 12–18: Succession Sowing + Seedling Care
@@ -154,6 +162,11 @@ every 2–3 years (Penn State Extension offers low-cost soil testing).
   - Plant at base of trellis or fence; they climb aggressively
 - [ ] **Direct sow zucchini** (2–3 seeds per hill, thin to 1 strongest plant)
 - [ ] **Direct sow bush beans** — first planting
+- [ ] **Direct sow cosmos** — scatter in a dedicated bed or among vegetables; thin to 12 inches apart
+  - They bloom in 7–8 weeks and attract pollinators that help your vegetables
+- [ ] **Direct sow sunflowers** — first planting
+  - Plant 1 inch deep, 6 inches apart (thin to 12–24 inches); full sun required
+  - Sow a second round June 1 for a later flush of blooms
 - [ ] Mulch everything with 2–3 inches of straw or shredded leaves (moisture + weed control)
 
 #### Week 11 — May 24–31: Establishment Week
@@ -246,6 +259,8 @@ every 2–3 years (Penn State Extension offers low-cost soil testing).
 - [ ] Pull any remaining spent bean plants; sow final succession if desired
 - [ ] Strawberry renovation (June-bearing): Mow or cut foliage to 1 inch; thin crowns to 6–8 inches apart;
   apply compost and fertilizer to encourage new growth for next year
+- [ ] **Divide and transplant iris rhizomes** if clumps are overcrowded (every 3–5 years keeps them blooming well)
+  - Dig, separate, trim leaves to 6 inches, replant with top of rhizome just at soil surface — do not bury deep
 - [ ] Keep weeding — weeds compete heavily for water in dry July spells
 
 #### Week 19 — July 22–31: Process and Preserve
@@ -397,6 +412,10 @@ every 2–3 years (Penn State Extension offers low-cost soil testing).
 | Basil | March 22–April 1 | Transplant May 17–20 | June – September |
 | Lettuce/Spinach | — | Direct sow March 22 and August 1 | April–May, September–October |
 | Garlic | — | Plant cloves October 1–15 | July (following year) |
+| Scarlet Flax | — | Direct sow March 29–April 10 | May – June |
+| Cosmos | — | Direct sow May 17–20 | July – Frost |
+| Sunflowers | — | Direct sow May 17–20 (succession every 2 wks) | July – September |
+| Iris | — | Plant rhizomes July–September | May–June (following year) |
 
 ---
 

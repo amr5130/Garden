@@ -620,5 +620,22 @@
 
 <p class="sources"><em>Sources: <a href="https://planthardiness.ars.usda.gov/">USDA Plant Hardiness Zone Map</a> | <a href="https://www.almanac.com/gardening/frostdates/zipcode/18612">Old Farmer's Almanac — Dallas PA Frost Dates</a> | <a href="https://gardenforwildlife.com/blogs/learning-center/the-ultimate-guide-to-gardening-in-pennsylvania">Pennsylvania Gardening Guide — Garden For Wildlife</a> | <a href="https://www.envirothonpa.org/documents/AnIntrotoSoilsofPA_000.pdf">Penn State Extension Soils</a> | <a href="https://www.phipps.conservatory.org/blog/detail/greener-gardening-modifying-ph-levels-in-soil">Phipps Conservatory — Soil pH Guide</a></em></p>
 
+<script>
+  (function () {
+    var PREFIX = 'garden-';
+    document.querySelectorAll('input[type="checkbox"][id]').forEach(function (cb) {
+      if (localStorage.getItem(PREFIX + cb.id) === '1') cb.checked = true;
+    });
+    document.addEventListener('change', function (e) {
+      if (e.target.type === 'checkbox' && e.target.id) {
+        if (e.target.checked) {
+          localStorage.setItem(PREFIX + e.target.id, '1');
+        } else {
+          localStorage.removeItem(PREFIX + e.target.id);
+        }
+      }
+    });
+  })();
+</script>
 </body>
 </html>

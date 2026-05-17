@@ -223,6 +223,181 @@
       .month-section { page-break-inside: avoid; }
       h3 { page-break-after: avoid; }
     }
+
+    /* ── Garden Bed Planner ── */
+    .planner-intro { font-size: 0.9em; color: #555; margin-bottom: 1em; font-style: italic; }
+
+    #planner-wrap {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    #palette-section { flex: 0 0 158px; }
+    .palette-header { font-weight: bold; font-size: 0.88em; color: #4a5e2a; margin-bottom: 3px; }
+    .palette-note { font-size: 0.72em; color: #999; margin-bottom: 8px; line-height: 1.4; }
+
+    #crop-palette { display: flex; flex-direction: column; gap: 4px; }
+    .palette-tile {
+      padding: 5px 8px;
+      border-radius: 5px;
+      font-size: 0.76em;
+      font-family: Georgia, serif;
+      cursor: grab;
+      border: 2px solid;
+      user-select: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .palette-tile:hover { transform: translateX(2px); }
+    .palette-tile:active { cursor: grabbing; }
+    .palette-tile.dragging { opacity: 0.35; }
+
+    #beds-section { flex: 1; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+    .bed-wrap {
+      border: 2px solid #c8b89a;
+      border-radius: 8px;
+      background: #fefcf7;
+      padding: 10px;
+    }
+    .bed-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .bed-name { font-weight: bold; font-size: 0.92em; color: #4a5e2a; }
+    .bed-dim { font-size: 0.76em; color: #999; font-style: italic; }
+    .clear-bed-btn {
+      margin-left: auto;
+      padding: 3px 10px;
+      background: #fff;
+      border: 1px solid #c2a96e;
+      border-radius: 4px;
+      color: #7a5a1a;
+      font-size: 0.74em;
+      cursor: pointer;
+      font-family: Georgia, serif;
+    }
+    .clear-bed-btn:hover { background: #fdf4e3; }
+
+    .bed-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 4px;
+    }
+    .bed-cell {
+      aspect-ratio: 1;
+      border: 1.5px dashed #c8b89a;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65em;
+      text-align: center;
+      cursor: default;
+      transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+      position: relative;
+      background: #fdf9f2;
+      color: #ccc;
+      overflow: hidden;
+    }
+    .bed-cell::before { content: '+'; font-size: 1.4em; pointer-events: none; }
+    .bed-cell.drag-over {
+      border-color: #8a9a5b !important;
+      border-style: solid !important;
+      box-shadow: inset 0 0 0 2px #8a9a5b44;
+    }
+    .bed-cell.filled {
+      border-style: solid;
+      cursor: grab;
+      color: inherit;
+    }
+    .bed-cell.filled::before { display: none; }
+    .bed-cell.filled:active { cursor: grabbing; }
+    .cell-label {
+      font-size: 0.98em;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.15;
+      padding: 2px 3px;
+      pointer-events: none;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .cell-remove {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 15px;
+      height: 15px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.18);
+      color: inherit;
+      font-size: 11px;
+      line-height: 15px;
+      cursor: pointer;
+      display: none;
+      padding: 0;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .bed-cell.filled:hover .cell-remove { display: block; }
+    .cell-remove:hover { background: rgba(0,0,0,0.35); }
+
+    /* Companion panel */
+    #companion-panel {
+      margin-top: 12px;
+      border: 1px solid #d4c9b0;
+      border-radius: 8px;
+      background: #fefcf7;
+      padding: 12px 16px;
+      font-size: 0.88em;
+      display: none;
+    }
+    .companion-title { font-weight: bold; font-size: 1em; margin-bottom: 8px; }
+    .companion-section-label { font-size: 0.82em; color: #666; display: block; margin-bottom: 5px; }
+    .companion-list { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+    .companion-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 0.88em;
+      border: 1px solid;
+      cursor: help;
+    }
+    .companion-chip.good { background: #e8f5e9; border-color: #4caf50; color: #1b5e20; }
+    .companion-chip.bad  { background: #ffebee; border-color: #f44336; color: #b71c1c; }
+
+    .companion-nearby { margin-top: 10px; padding-top: 10px; border-top: 1px solid #e8e0d4; }
+    .nearby-label { font-size: 0.82em; color: #666; margin-bottom: 6px; display: block; }
+    .neighbor-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 0.86em;
+      border: 1px solid;
+      margin: 3px 3px 0 0;
+      cursor: help;
+    }
+    .neighbor-chip.good { background: #e8f5e9; border-color: #4caf50; color: #1b5e20; }
+    .neighbor-chip.bad  { background: #ffebee; border-color: #f44336; color: #b71c1c; }
+    .neighbor-chip.ok   { background: #f5f5f5; border-color: #bdbdbd; color: #555; }
+
+    .no-companions { color: #888; font-style: italic; font-size: 0.9em; }
+
+    @media (max-width: 620px) {
+      #planner-wrap { flex-direction: column; }
+      #palette-section { flex: none; }
+      #crop-palette { flex-direction: row; flex-wrap: wrap; }
+      .bed-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media print {
+      #planner-wrap, #companion-panel { display: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -267,6 +442,38 @@
     <tr><td><strong>Lettuce/Spinach</strong> <em>(suggested)</em></td><td>Cool-season, direct sow</td><td>Quick spring + fall crop; fills early/late gaps</td></tr>
   </tbody>
 </table>
+
+<hr>
+
+<h2 id="planner-heading">Garden Bed Planner</h2>
+<p class="planner-intro">Drag crops from the palette into your beds. Cells are color-coded by crop — drop a plant to see companion planting benefits and risks for its neighbors.</p>
+
+<div id="planner-wrap">
+  <div id="palette-section">
+    <div class="palette-header">Crop Palette</div>
+    <div class="palette-note">Drag to a bed<br>Hover filled cell → × to remove</div>
+    <div id="crop-palette"></div>
+  </div>
+  <div id="beds-section">
+    <div class="bed-wrap">
+      <div class="bed-header">
+        <span class="bed-name">Bed A</span>
+        <span class="bed-dim">8 × 4 ft</span>
+        <button class="clear-bed-btn" data-bed="0">Clear bed</button>
+      </div>
+      <div class="bed-grid" id="bed-0"></div>
+    </div>
+    <div class="bed-wrap">
+      <div class="bed-header">
+        <span class="bed-name">Bed B</span>
+        <span class="bed-dim">8 × 4 ft</span>
+        <button class="clear-bed-btn" data-bed="1">Clear bed</button>
+      </div>
+      <div class="bed-grid" id="bed-1"></div>
+    </div>
+  </div>
+</div>
+<div id="companion-panel"><div id="companion-inner"></div></div>
 
 <hr>
 
@@ -947,6 +1154,433 @@
   // ── Init ──
   updateProgress();
   highlightCurrentWeek();
+})();
+</script>
+
+<script>
+/* ── Garden Bed Planner ── */
+(function () {
+  'use strict';
+
+  var COLS = 8, ROWS = 4, BEDS = 2, CELLS = COLS * ROWS;
+  var STORE_KEY = 'garden-planner-v1';
+
+  var CROPS = [
+    'Snap Peas','Sweet Peppers','Roma Tomatoes','Strawberries','Carrots',
+    'Cucumbers','Zucchini','Bush Beans','Basil','Lettuce/Spinach',
+    'Sunflowers','Cosmos','Scarlet Flax','Iris','Garlic'
+  ];
+
+  var COLORS = {
+    'Snap Peas':       { bg:'#c8e6c9', border:'#43a047', text:'#1b5e20' },
+    'Sweet Peppers':   { bg:'#ffe082', border:'#ff8f00', text:'#e65100' },
+    'Roma Tomatoes':   { bg:'#ef9a9a', border:'#e53935', text:'#b71c1c' },
+    'Strawberries':    { bg:'#f8bbd0', border:'#d81b60', text:'#880e4f' },
+    'Carrots':         { bg:'#ffcc80', border:'#f4511e', text:'#bf360c' },
+    'Cucumbers':       { bg:'#b2dfdb', border:'#00796b', text:'#004d40' },
+    'Zucchini':        { bg:'#dcedc8', border:'#558b2f', text:'#33691e' },
+    'Bush Beans':      { bg:'#d7ccc8', border:'#6d4c41', text:'#3e2723' },
+    'Basil':           { bg:'#b2ebf2', border:'#0097a7', text:'#006064' },
+    'Lettuce/Spinach': { bg:'#f0f4c3', border:'#9e9d24', text:'#827717' },
+    'Sunflowers':      { bg:'#fff9c4', border:'#fbc02d', text:'#f57f17' },
+    'Cosmos':          { bg:'#e1bee7', border:'#8e24aa', text:'#4a148c' },
+    'Scarlet Flax':    { bg:'#ffccbc', border:'#e64a19', text:'#bf360c' },
+    'Iris':            { bg:'#c5cae9', border:'#3949ab', text:'#1a237e' },
+    'Garlic':          { bg:'#f5f5f5', border:'#9e9e9e', text:'#424242' }
+  };
+
+  var COMPANIONS = {
+    'Snap Peas': {
+      good: {
+        'Carrots':         'Peas fix nitrogen that carrots love; roots don\'t compete.',
+        'Lettuce/Spinach': 'Peas climb while lettuce fills the space below — efficient use of space.',
+        'Cucumbers':       'Both climbers; peas fix nitrogen cucumbers use.',
+        'Basil':           'Basil repels aphids that commonly attack pea plants.',
+        'Strawberries':    'Peas fix nitrogen; both are cool-season compatible.'
+      },
+      bad: {
+        'Garlic': 'Garlic inhibits pea growth — keep these well separated.'
+      }
+    },
+    'Sweet Peppers': {
+      good: {
+        'Basil':   'Basil deters aphids and spider mites; may improve pepper flavor.',
+        'Carrots': 'Carrots loosen soil and don\'t compete for nutrients.',
+        'Cosmos':  'Attracts pollinators that improve pepper fruit set.'
+      },
+      bad: {
+        'Zucchini':    'Both are large plants competing for space and water.',
+        'Sunflowers':  'Sunflowers release allelopathic compounds that can inhibit pepper growth.'
+      }
+    },
+    'Roma Tomatoes': {
+      good: {
+        'Basil':           'Classic pairing — repels thrips and hornworm moths; may improve flavor.',
+        'Carrots':         'Carrots aerate soil near tomato roots without competing.',
+        'Snap Peas':       'Peas fix nitrogen; compatible early/late season.',
+        'Cosmos':          'Attracts beneficial insects and pollinators to tomatoes.'
+      },
+      bad: {
+        'Zucchini':    'Both heavy feeders that compete; also share blight diseases.',
+        'Cucumbers':   'Compete for water and nutrients; share foliar diseases.',
+        'Sunflowers':  'Sunflowers release allelopathic compounds that inhibit tomato growth.'
+      }
+    },
+    'Strawberries': {
+      good: {
+        'Lettuce/Spinach': 'Lettuce fills the space between strawberry plants efficiently.',
+        'Bush Beans':      'Beans fix nitrogen that strawberries use; compatible root depths.',
+        'Snap Peas':       'Cool-season companions; peas fix nitrogen for strawberries.',
+        'Garlic':          'Garlic repels slugs and spider mites that damage strawberries.'
+      },
+      bad: {
+        'Roma Tomatoes': 'Tomatoes harbor verticillium wilt that can devastate strawberries.',
+        'Cucumbers':     'Cucumbers compete aggressively and stunt strawberry growth.'
+      }
+    },
+    'Carrots': {
+      good: {
+        'Roma Tomatoes':   'Tomatoes provide light shade; carrots aerate the tomato root zone.',
+        'Snap Peas':       'Peas fix nitrogen; both prefer loose, similar soil conditions.',
+        'Lettuce/Spinach': 'Shallow roots don\'t compete with deep carrot roots.',
+        'Basil':           'Basil repels carrot flies when planted nearby.',
+        'Scarlet Flax':    'Flax attracts predatory insects that control carrot pests.'
+      },
+      bad: {}
+    },
+    'Cosmos': {
+      good: {
+        'Roma Tomatoes': 'Attract pollinators and beneficial predatory insects to tomatoes.',
+        'Sweet Peppers': 'Pollinator attraction improves pepper fruit set.',
+        'Cucumbers':     'Attracts bees essential for cucumber fruit set.',
+        'Zucchini':      'Zucchini needs lots of pollinators — cosmos brings them in.'
+      },
+      bad: {}
+    },
+    'Scarlet Flax': {
+      good: {
+        'Carrots':       'Flax attracts beneficial insects that prey on carrot pests.',
+        'Roma Tomatoes': 'Attracts lacewings and other beneficial predatory insects.'
+      },
+      bad: {}
+    },
+    'Iris': {
+      good: {},
+      bad: {}
+    },
+    'Sunflowers': {
+      good: {
+        'Cucumbers':  'Cucumbers can climb sunflower stalks; sunflowers also provide beneficial shade.',
+        'Zucchini':   'Attracts pollinators that zucchini depends on for fruit set.',
+        'Bush Beans': 'Three Sisters-style planting — sunflowers, beans, and squash.'
+      },
+      bad: {
+        'Roma Tomatoes': 'Sunflowers release allelopathic compounds that inhibit tomato growth.',
+        'Sweet Peppers': 'Same allelopathic concern — keep sunflowers away from peppers.'
+      }
+    },
+    'Cucumbers': {
+      good: {
+        'Bush Beans':   'Beans fix nitrogen cucumbers use; warm-season companions.',
+        'Sunflowers':   'Cucumbers climb sunflower stalks; great vertical pairing.',
+        'Snap Peas':    'Peas fix nitrogen; both like to climb.',
+        'Cosmos':       'Cosmos attract pollinators essential for cucumber fruit set.'
+      },
+      bad: {
+        'Roma Tomatoes': 'Share blight and mosaic diseases; compete for water.',
+        'Strawberries':  'Cucumbers compete aggressively and stunt strawberry growth.'
+      }
+    },
+    'Zucchini': {
+      good: {
+        'Cosmos':     'Cosmos attract the pollinators zucchini depends on.',
+        'Bush Beans': 'Beans fix nitrogen; classic Three Sisters-style planting.',
+        'Sunflowers': 'Sunflowers attract pollinators that improve zucchini yield.'
+      },
+      bad: {
+        'Roma Tomatoes': 'Both heavy feeders; share diseases including blight.',
+        'Sweet Peppers': 'Both need space; they compete and crowd each other.'
+      }
+    },
+    'Bush Beans': {
+      good: {
+        'Cucumbers':   'Classic companions — beans fix nitrogen cucumbers use.',
+        'Strawberries':'Beans fix nitrogen strawberries use; compatible root zones.',
+        'Carrots':     'Beans fix nitrogen; root zones don\'t compete.',
+        'Zucchini':    'Three Sisters principle — beans and squash family work well together.',
+        'Sunflowers':  'Sunflowers provide structure; beans fix nitrogen in return.'
+      },
+      bad: {
+        'Garlic': 'Garlic stunts bean growth — keep well separated.'
+      }
+    },
+    'Basil': {
+      good: {
+        'Roma Tomatoes': 'Best companion — repels thrips, aphids, and hornworm moths.',
+        'Sweet Peppers': 'Repels aphids and spider mites from pepper plants.',
+        'Snap Peas':     'Basil repels aphids that commonly attack peas.',
+        'Carrots':       'Basil repels carrot flies and other pests.'
+      },
+      bad: {}
+    },
+    'Lettuce/Spinach': {
+      good: {
+        'Snap Peas':    'Peas provide light shade and fix nitrogen lettuce uses.',
+        'Strawberries': 'Efficient use of space between strawberry plants.',
+        'Carrots':      'Different root depths — no competition; great space-savers.',
+        'Basil':        'Basil may repel aphids that attack lettuce and spinach.'
+      },
+      bad: {}
+    },
+    'Garlic': {
+      good: {
+        'Roma Tomatoes': 'Garlic deters aphids and spider mites from tomatoes.',
+        'Strawberries':  'Garlic repels slugs and spider mites that damage strawberries.',
+        'Carrots':       'Garlic repels carrot flies; roots grow at compatible depths.'
+      },
+      bad: {
+        'Snap Peas':  'Garlic inhibits pea growth — keep these separated.',
+        'Bush Beans': 'Garlic stunts bean growth — avoid planting near beans.'
+      }
+    }
+  };
+
+  var ABBREV = {
+    'Roma Tomatoes':   'Tomatoes',
+    'Sweet Peppers':   'Peppers',
+    'Lettuce/Spinach': 'Lettuce',
+    'Scarlet Flax':    'S. Flax',
+    'Snap Peas':       'Peas',
+    'Bush Beans':      'Beans',
+    'Sunflowers':      'Sunflwrs',
+    'Strawberries':    'Berries',
+    'Cucumbers':       'Cukes'
+  };
+
+  function abbrev(crop) { return ABBREV[crop] || crop; }
+
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── State ──
+  var state = [new Array(CELLS).fill(null), new Array(CELLS).fill(null)];
+
+  function loadState() {
+    try {
+      var s = JSON.parse(localStorage.getItem(STORE_KEY));
+      if (Array.isArray(s) && s.length === BEDS) state = s;
+    } catch (e) {}
+  }
+
+  function saveState() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  // ── Drag state ──
+  var drag = null;
+
+  // ── Palette ──
+  function buildPalette() {
+    var el = document.getElementById('crop-palette');
+    CROPS.forEach(function (crop) {
+      var c = COLORS[crop];
+      var t = document.createElement('div');
+      t.className = 'palette-tile';
+      t.textContent = crop;
+      t.draggable = true;
+      t.dataset.crop = crop;
+      t.title = crop;
+      t.style.cssText = 'background:'+c.bg+';border-color:'+c.border+';color:'+c.text;
+      t.addEventListener('dragstart', function (e) {
+        drag = { source: 'palette', crop: crop };
+        t.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'copy';
+        setTimeout(function () { t.classList.remove('dragging'); }, 0);
+      });
+      el.appendChild(t);
+    });
+  }
+
+  // ── Beds ──
+  function buildBeds() {
+    for (var b = 0; b < BEDS; b++) {
+      var grid = document.getElementById('bed-' + b);
+      grid.innerHTML = '';
+      for (var i = 0; i < CELLS; i++) {
+        var cell = document.createElement('div');
+        cell.className = 'bed-cell';
+        cell.dataset.bed = b;
+        cell.dataset.idx = i;
+        cell.addEventListener('dragstart', onCellDragStart);
+        cell.addEventListener('dragover',  onCellDragOver);
+        cell.addEventListener('dragleave', onCellDragLeave);
+        cell.addEventListener('drop',      onCellDrop);
+        grid.appendChild(cell);
+      }
+    }
+  }
+
+  function renderBeds() {
+    for (var b = 0; b < BEDS; b++) {
+      var cells = document.getElementById('bed-' + b).querySelectorAll('.bed-cell');
+      cells.forEach(function (cell, i) { applyToCell(cell, state[b][i]); });
+    }
+  }
+
+  function applyToCell(cell, crop) {
+    if (crop) {
+      var c = COLORS[crop] || { bg:'#eee', border:'#999', text:'#333' };
+      cell.className = 'bed-cell filled';
+      cell.style.cssText = 'background:'+c.bg+';border-color:'+c.border+';color:'+c.text;
+      cell.draggable = true;
+      cell.innerHTML = '<span class="cell-label">'+esc(abbrev(crop))+'</span>';
+      var btn = document.createElement('button');
+      btn.className = 'cell-remove';
+      btn.innerHTML = '&times;';
+      btn.title = 'Remove ' + crop;
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var b = +cell.dataset.bed, idx = +cell.dataset.idx;
+        state[b][idx] = null;
+        applyToCell(cell, null);
+        saveState();
+        document.getElementById('companion-panel').style.display = 'none';
+      });
+      cell.appendChild(btn);
+    } else {
+      cell.className = 'bed-cell';
+      cell.style.cssText = '';
+      cell.draggable = false;
+      cell.innerHTML = '';
+    }
+  }
+
+  // ── Drag handlers ──
+  function onCellDragStart(e) {
+    var b = +e.currentTarget.dataset.bed, idx = +e.currentTarget.dataset.idx;
+    var crop = state[b][idx];
+    if (!crop) { e.preventDefault(); return; }
+    drag = { source: 'cell', bed: b, idx: idx, crop: crop };
+    e.dataTransfer.effectAllowed = 'move';
+  }
+
+  function onCellDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = drag && drag.source === 'cell' ? 'move' : 'copy';
+    e.currentTarget.classList.add('drag-over');
+  }
+
+  function onCellDragLeave(e) {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      e.currentTarget.classList.remove('drag-over');
+    }
+  }
+
+  function onCellDrop(e) {
+    e.preventDefault();
+    var target = e.currentTarget;
+    target.classList.remove('drag-over');
+    if (!drag) return;
+
+    var tb = +target.dataset.bed, ti = +target.dataset.idx;
+
+    if (drag.source === 'cell') {
+      var sb = drag.bed, si = drag.idx;
+      if (sb === tb && si === ti) { drag = null; return; }
+      var displaced = state[tb][ti];
+      state[sb][si] = displaced;
+      var srcCell = document.getElementById('bed-' + sb).querySelectorAll('.bed-cell')[si];
+      applyToCell(srcCell, displaced);
+    }
+
+    state[tb][ti] = drag.crop;
+    applyToCell(target, drag.crop);
+    saveState();
+    showCompanionInfo(drag.crop, tb, ti);
+    drag = null;
+  }
+
+  // ── Companion info ──
+  function neighbors(bed, idx) {
+    var r = Math.floor(idx / COLS), col = idx % COLS, result = [];
+    [[-1,0],[1,0],[0,-1],[0,1]].forEach(function (d) {
+      var nr = r + d[0], nc = col + d[1];
+      if (nr >= 0 && nr < ROWS && nc >= 0 && nc < COLS) {
+        var crop = state[bed][nr * COLS + nc];
+        if (crop) result.push(crop);
+      }
+    });
+    return result;
+  }
+
+  function showCompanionInfo(crop, bed, idx) {
+    var data = COMPANIONS[crop] || { good: {}, bad: {} };
+    var c = COLORS[crop] || { text:'#333' };
+    var panel = document.getElementById('companion-panel');
+    var inner = document.getElementById('companion-inner');
+
+    var goodKeys = Object.keys(data.good);
+    var badKeys  = Object.keys(data.bad);
+    var nearby   = neighbors(bed, idx);
+
+    var html = '<div class="companion-title" style="color:' + c.text + '">' + esc(crop) + ' — Companion Guide</div>';
+
+    if (goodKeys.length === 0 && badKeys.length === 0) {
+      html += '<p class="no-companions">Decorative plant — no strong companion planting interactions known.</p>';
+    } else {
+      if (goodKeys.length) {
+        html += '<span class="companion-section-label">Plant near:</span><div class="companion-list">';
+        goodKeys.forEach(function (p) {
+          html += '<span class="companion-chip good" title="' + esc(data.good[p]) + '">✓ ' + esc(p) + '</span>';
+        });
+        html += '</div>';
+      }
+      if (badKeys.length) {
+        html += '<span class="companion-section-label">Keep away from:</span><div class="companion-list">';
+        badKeys.forEach(function (p) {
+          html += '<span class="companion-chip bad" title="' + esc(data.bad[p]) + '">✕ ' + esc(p) + '</span>';
+        });
+        html += '</div>';
+      }
+    }
+
+    if (nearby.length) {
+      html += '<div class="companion-nearby"><span class="nearby-label">Adjacent plants in this bed:</span>';
+      nearby.forEach(function (n) {
+        var rel = 'ok', icon = '·', tip = 'Neutral — no known strong interaction.';
+        if (data.good && data.good[n]) { rel = 'good'; icon = '✓'; tip = data.good[n]; }
+        else if (data.bad  && data.bad[n])  { rel = 'bad';  icon = '✕'; tip = data.bad[n];  }
+        html += '<span class="neighbor-chip ' + rel + '" title="' + esc(tip) + '">' + icon + ' ' + esc(n) + '</span>';
+      });
+      html += '</div>';
+    }
+
+    inner.innerHTML = html;
+    panel.style.display = 'block';
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ── Clear buttons ──
+  document.querySelectorAll('.clear-bed-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var b = +btn.dataset.bed;
+      if (!confirm('Clear Bed ' + (b === 0 ? 'A' : 'B') + '?')) return;
+      state[b] = new Array(CELLS).fill(null);
+      document.getElementById('bed-' + b).querySelectorAll('.bed-cell').forEach(function (c) {
+        applyToCell(c, null);
+      });
+      saveState();
+      document.getElementById('companion-panel').style.display = 'none';
+    });
+  });
+
+  // ── Init ──
+  loadState();
+  buildPalette();
+  buildBeds();
+  renderBeds();
+
 })();
 </script>
 </body>
